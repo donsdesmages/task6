@@ -1,41 +1,53 @@
-import java.util.Scanner;
 
-public class Main {
+import java.io.FileNotFoundException;
 
-    public static void main(String[] args) {
+public class Main extends Collection  {
 
-        Calculate.Cal();
-    }
+    public static void main(String[] args) throws FileNotFoundException {
 
-     static class Calculate {
-
-        public static void Cal () {
-
-            double num1;
-            double num2;
-            String symbol;
-            double answer = 0;
-
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter numbers for calculation");
-            num1 = scanner.nextDouble();
-            symbol = scanner.next();
-            num2 = scanner.nextDouble();
-
-            switch(symbol)
-
-            {
-                case "-": answer = num1 - num2; break;
-                case "+": answer = num1 + num2; break;
-                case "/": answer = num1 / num2; break;
-                case "*": answer = num1 * num2; break;
-
-                default:
-                    System.out.println("Вы ввели что-то не то. Введите символ!");
-                    return;
+        class Write {
+            public void Method () throws FileNotFoundException {
+                WriteInFileToDo writeInFileToDo1 = new WriteInFileToDo();
+                writeInFileToDo1.WritingFirstStringInFileTxt();
             }
-
-            System.out.println(num1 +" "+ num2 +" = " + answer);
         }
+        Write write = new Write();
+        write.Method();
+
+        class Print {
+
+            public void PrintingMenu () {
+                StringNames.printMenu();
+                StringNames.printForiMenu();
+                System.out.println();
+                StringNames.namesToDo();
+            }
+        }
+        Print print = new Print();
+        print.PrintingMenu();
+
+        class Scan {
+            public void Command1 () {
+                ScannerCommandsForConsole scannerCommandsForConsole = new ScannerCommandsForConsole();
+                scannerCommandsForConsole.ScannerForGetFirstCommand();
+            }
+        }
+        Scan scan = new Scan();
+        scan.Command1();
+
+        class Scan2 {
+            public void Command2 () {
+                ScannerCommandsForConsole scannerCommandsForConsole2 = new ScannerCommandsForConsole();
+                scannerCommandsForConsole2.ScannerForTwoCommand();
+            }
+        }
+        Scan2 scan2 = new Scan2();
+        scan2.Command2();
+        WriteInFileToDo writeFile2 = new WriteInFileToDo();
+        System.out.println(GetLocalTimeForMorningDoWater1());
+        StringNames.AddTime();
+        writeFile2.WriterFilesMethod();
     }
 }
+
+
